@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar } from 'react-native';
+import { StatusBar, View, Text } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize'
 
 import Logo from '../../assets/logo.svg';
@@ -10,7 +10,8 @@ import {
   Container,
   Header,
   HeaderContent,
-  TotalCars
+  TotalCars,
+  CarList
 } from './styles';
 
 export function Home(){
@@ -24,6 +25,12 @@ export function Home(){
     },
     thumbnail: 'https://e7.pngegg.com/pngimages/796/507/png-clipart-audi-rs-4-audi-a4-allroad-quattro-car-audi-rs-6-audi-compact-car-sedan.png',
 
+  }
+
+   function renderCard () {
+    return (
+      <Car data={carData}/>
+    )
   }
 
   return (
@@ -41,11 +48,17 @@ export function Home(){
           />
           
           <TotalCars>
-            Total XX Caros
+            Total XX carros
           </TotalCars>
         </HeaderContent>
       </Header>
-      <Car data={carData}/>
+
+      <CarList 
+        data={[1, 2, 3]}
+        keyExtractor={item => String(item)}
+        renderItem={({ item }) => <Car data={carData}/>}
+      />
+      
     </Container>
   );
 }
