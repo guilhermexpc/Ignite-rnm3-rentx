@@ -21,68 +21,76 @@ export const CarImages = styled.View`
   margin-top: ${getStatusBarHeight() + 32}px;
 `;
 
-// export const Details = styled.View`
-//   width: 100%;
+export const Content = styled.ScrollView.attrs({
+  contentContainerStyle: {
+    padding: 24,
+    alighItems: 'center'
+  },
+  showsVerticalScrollIndicator: false
+})``;
 
-//   flex-direction: row;
-//   align-items: center;
-//   justify-content: space-between;
+export const Details = styled.View`
+  width: 100%;
 
-//   margin-top: 38px;
-// `;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
-// export const Description = styled.View``;
+  margin-top: 38px;
+`;
 
-// export const Brand = styled.Text`
-//   font-family: ${({ theme }) => theme.fonts.secondary_500};
-//   color: ${({ theme }) => theme.colors.text_detail};
-//   font-size: ${RFValue(10)}px;
+export const Description = styled.View``;
 
-//   text-transform: uppercase;
-// `;
+export const Brand = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.secondary_500};
+  color: ${({ theme }) => theme.colors.text_detail};
+  font-size: ${RFValue(10)}px;
 
-// export const Name = styled.Text`
-//   font-family: ${({ theme }) => theme.fonts.secondary_500};
-//   color: ${({ theme }) => theme.colors.title};
-//   font-size: ${RFValue(25)}px;
-// `;
+  text-transform: uppercase;
+`;
 
-// export const Rent = styled.View``;
+export const Name = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.secondary_500};
+  color: ${({ theme }) => theme.colors.title};
+  font-size: ${RFValue(25)}px;
+`;
 
-// export const Period = styled.Text`
-//   font-family: ${({ theme }) => theme.fonts.secondary_500};
-//   color: ${({ theme }) => theme.colors.text_detail};
-//   font-size: ${RFValue(10)}px;
+export const Rent = styled.View``;
 
-//   text-transform: uppercase;
-// `;
+export const Period = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.secondary_500};
+  color: ${({ theme }) => theme.colors.text_detail};
+  font-size: ${RFValue(10)}px;
 
-// export const Price = styled.Text`
-//   font-family: ${({ theme }) => theme.fonts.secondary_500};
-//   color: ${({ theme }) => theme.colors.main};
-//   font-size: ${RFValue(25)}px;
-// `;
+  text-transform: uppercase;
+`;
 
-// export const About = styled.Text`
-//   font-family: ${({ theme }) => theme.fonts.primary_400};
-//   color: ${({ theme }) => theme.colors.text};
-//   font-size: ${RFValue(15)}px;
-//   text-align: justify;
+export const Price = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.secondary_500};
+  color: ${({ theme }) => theme.colors.main};
+  font-size: ${RFValue(25)}px;
+`;
 
-//   margin-top: 23px;
-//   line-height:${RFValue(25)}px;
-// `;
+export const About = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.primary_400};
+  color: ${({ theme }) => theme.colors.text};
+  font-size: ${RFValue(15)}px;
+  text-align: justify;
 
-// export const Accessories = styled.View`
-//   width: 100%;
+  margin-top: 23px;
+  line-height:${RFValue(25)}px;
+`;
 
-//   flex-direction: row;
-//   flex-wrap: wrap;
-//   align-items: center;
-//   justify-content: space-between;
+export const Accessories = styled.View`
+  width: 100%;
 
-//   margin-top: 16px;
-// `;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 16px;
+`;
 
 // export const Footer = styled.View`
 //   width: 100%;
