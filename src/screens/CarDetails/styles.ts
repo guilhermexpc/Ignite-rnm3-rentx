@@ -77,7 +77,7 @@ export const About = styled.Text`
   font-size: ${RFValue(15)}px;
   text-align: justify;
 
-  margin-top: 23px;
+  margin-top: 13px;
   line-height:${RFValue(25)}px;
 `;
 
@@ -92,12 +92,12 @@ export const Accessories = styled.View`
   margin-top: 16px;
 `;
 
-// export const Footer = styled.View`
-//   width: 100%;
-//   background-color: ${({ theme }) => theme.colors.background_secondary};
+export const Footer = styled.View`
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.background_secondary};
 
-//   padding: 24px 24px ${getBottomSpace() + 24}px;
-// `;
+  padding: 24px 24px ${getBottomSpace() + 24}px;
+`;
 
 // export const OfflineInfo = styled.Text`
 //   color: ${({ theme }) => theme.colors.main};

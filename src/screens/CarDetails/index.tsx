@@ -2,7 +2,9 @@ import React from 'react';
 import { BackButton } from '../../components/BackButton';
 import { ImageSlider } from '../../components/ImageSlider';
 import { Accessory } from '../../components/Accessory';
+import { Button } from '../../components/Button';
 
+// [SVGs]
 import SpeedSvg from '../../assets/speed.svg';
 import AccelerationSvg from '../../assets/acceleration.svg';
 import ForceSvg from '../../assets/force.svg';
@@ -24,11 +26,16 @@ import {
   Price,
   About,
   Accessories,
-  // Footer,
+  Footer,
   // OfflineInfo
 } from './styles';
 
 export function CarDetails(){
+
+  function handleConfirmRental() {
+    // navigation.navigate('Scheduling', { car: carUpdate });
+  }
+
   return (
     <Container>
       <Header>
@@ -49,28 +56,39 @@ export function CarDetails(){
         </Description>
         
         <Rent>
-          <Price>Price</Price>
           <Period>Period</Period>
+          <Price>Price</Price>
         </Rent>
       </Details>    
+
+      
+      <Accessories>
+        <Accessory name="380Km/h" icon={SpeedSvg}/>
+        <Accessory name="3.2s" icon={AccelerationSvg}/>
+        <Accessory name="800 HP" icon={ForceSvg}/>
+        <Accessory name="Gasolina" icon={GasolineSvg}/>
+        <Accessory name="Auto" icon={ExchangeSvg}/>
+        <Accessory name="2 Pessoas" icon={PeopleSvg}/>
+      </Accessories>
+
+      <About>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          libero earum ab quia officia illum pariatur
+          eligendi ut possimus dolorum, perspiciatis magni,
+          ipsam tempora deleniti.
+      </About>
     </Content>
 
-    <Accessories>
-      <Accessory name="380Km/h" icon={SpeedSvg}/>
-      <Accessory name="3.2s" icon={AccelerationSvg}/>
-      <Accessory name="800 HP" icon={ForceSvg}/>
-      <Accessory name="Gasolina" icon={GasolineSvg}/>
-      <Accessory name="Auto" icon={ExchangeSvg}/>
-      <Accessory name="2 Pessoas" icon={PeopleSvg}/>
-    </Accessories>
+    <Footer>
+      <Button 
+          title="Escolher período do aluguel" 
+          onPress={handleConfirmRental}
+          enabled={true}          
+        />
+    </Footer>
 
-    <About>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Quis fugiat facilis deleniti voluptatum repellendus nulla.
-      </About>
+    </Container>
 
  
-      
-    </Container>
   );
 }
