@@ -57,7 +57,6 @@ export function Calendar(){
       firstDay={1}
       minDate={getActualDate()}
 
-
     />
   );
 }
