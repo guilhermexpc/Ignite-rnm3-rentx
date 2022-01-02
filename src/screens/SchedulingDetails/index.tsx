@@ -39,13 +39,16 @@ import {
 } from './styles';
 import { DateInfo, DateTitle, DateValue, RentalPeriod } from '../Scheduling/styles';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { useNavigation } from '@react-navigation/native';
 
-export function SchedulingDatails(){
+export function SchedulingDetails(){
 
   const theme = useTheme();
 
-  function handleConfirmRental() {
-    // navigation.navigate('Scheduling', { car: carUpdate });
+  const navi = useNavigation<any>();
+
+  function handleNavigation() {
+    navi.navigate('SchedulingComplete');
   }
 
   return (
@@ -121,8 +124,9 @@ export function SchedulingDatails(){
 
     <Footer>
       <Button 
-          title="Escolher período do aluguel" 
-          onPress={handleConfirmRental}
+          title="Alugar agora" 
+          color={theme.colors.success}
+          onPress={handleNavigation}
           enabled={true}          
         />
     </Footer>

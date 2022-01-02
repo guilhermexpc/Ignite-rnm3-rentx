@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+
 import { BackButton } from '../../components/BackButton';
 import { ImageSlider } from '../../components/ImageSlider';
 import { Accessory } from '../../components/Accessory';
@@ -31,9 +33,10 @@ import {
 } from './styles';
 
 export function CarDetails(){
+  const navi = useNavigation<any>();
 
   function handleConfirmRental() {
-    // navigation.navigate('Scheduling', { car: carUpdate });
+    navi.navigate('Scheduling');
   }
 
   return (

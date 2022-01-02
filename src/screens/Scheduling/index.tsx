@@ -1,5 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import { BackButton } from '../../components/BackButton';
 import theme from '../../styles/theme';
 import { Calendar } from '../../components/Calendar';
@@ -20,6 +22,13 @@ import {
 import { Button } from '../../components/Button';
 
 export function Scheduling(){
+  
+  const navi = useNavigation<any>();
+
+  function handleNavigation() {
+    navi.navigate('SchedulingDetails');
+  }
+
   return (
     <Container>
       <Header>
@@ -61,7 +70,7 @@ export function Scheduling(){
         <Calendar />
       </Content>
       <Footer>
-        <Button title='Confirmar'/>
+        <Button title='Confirmar' onPress={handleNavigation}/>
       </Footer>
     </Container>
   );
