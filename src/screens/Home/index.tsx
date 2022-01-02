@@ -14,6 +14,7 @@ import {
   TotalCars,
   CarList
 } from './styles';
+import { screens } from '../../global/routes';
 
 export function Home(){
 
@@ -30,7 +31,7 @@ export function Home(){
     const navi = useNavigation<any>();
 
     function handleCarDetails(){
-      navi.navigate('CarDetails');
+      navi.navigate(screens.carDetails);
     }
 
    function renderCard () {

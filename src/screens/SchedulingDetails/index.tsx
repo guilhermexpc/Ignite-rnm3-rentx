@@ -40,6 +40,7 @@ import {
 import { DateInfo, DateTitle, DateValue, RentalPeriod } from '../Scheduling/styles';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { useNavigation } from '@react-navigation/native';
+import { screens } from '../../global/routes';
 
 export function SchedulingDetails(){
 
@@ -48,7 +49,7 @@ export function SchedulingDetails(){
   const navi = useNavigation<any>();
 
   function handleNavigation() {
-    navi.navigate('SchedulingComplete');
+    navi.navigate(screens.schedulingComplete);
   }
 
   return (

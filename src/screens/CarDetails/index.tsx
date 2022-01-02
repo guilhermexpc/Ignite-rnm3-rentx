@@ -31,12 +31,13 @@ import {
   Footer,
   // OfflineInfo
 } from './styles';
+import { screens } from '../../global/routes';
 
 export function CarDetails(){
   const navi = useNavigation<any>();
 
   function handleConfirmRental() {
-    navi.navigate('Scheduling');
+    navi.navigate(screens.scheduling);
   }
 
   return (

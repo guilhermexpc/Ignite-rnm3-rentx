@@ -20,13 +20,14 @@ import {
   Footer
 } from './styles';
 import { Button } from '../../components/Button';
+import { screens } from '../../global/routes';
 
 export function Scheduling(){
   
   const navi = useNavigation<any>();
 
   function handleNavigation() {
-    navi.navigate('SchedulingDetails');
+    navi.navigate(screens.schedulingDetails);
   }
 
   return (

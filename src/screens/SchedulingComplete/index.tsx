@@ -14,6 +14,7 @@ import {
   Footer
 } from './styles';
 import { ConfirmButton } from '../../components/ConfirmButton';
+import { screens } from '../../global/routes';
 
 export function SchedulingComplete(){
   const { width } = useWindowDimensions();
@@ -21,7 +22,7 @@ export function SchedulingComplete(){
   const navi = useNavigation<any>();
 
   function handleNavigation() {
-    navi.navigate('Home');
+    navi.navigate(screens.home);
   }
 
 
