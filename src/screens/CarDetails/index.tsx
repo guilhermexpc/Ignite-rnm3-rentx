@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 import { BackButton } from '../../components/BackButton';
 import { ImageSlider } from '../../components/ImageSlider';
@@ -14,6 +14,7 @@ import GasolineSvg from '../../assets/gasoline.svg';
 import ExchangeSvg from '../../assets/exchange.svg';
 import PeopleSvg from '../../assets/people.svg';
 
+import { CarDTO } from '../../dtos/CarDTO';
 import {
   Container,
   Header,
@@ -33,17 +34,28 @@ import {
 } from './styles';
 import { screens } from '../../global/routes';
 
+interface Params {
+  car: CarDTO;
+}
+
 export function CarDetails(){
-  const navi = useNavigation<any>();
+  const navigation = useNavigation<any>();
+  const route = useRoute();
+  const { car } = route.params as Params;
+  console.log(car);
 
   function handleConfirmRental() {
-    navi.navigate(screens.scheduling);
+    navigation.navigate(screens.scheduling);
+  }
+
+  function handleBack(){
+    navigation.goBack();
   }
 
   return (
     <Container>
       <Header>
-        <BackButton onPress={()=> {}}/>
+        <BackButton onPress={handleBack}/>
       </Header>
 
       <CarImages>
