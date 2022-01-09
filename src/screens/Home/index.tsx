@@ -43,10 +43,6 @@ export function Home(){
     fetchCars();
   },[])
 
-  useEffect (() => {
-    // console.warn(cars[0]);
-  },[cars])
-
   return (
     <Container>     
       <StatusBar 

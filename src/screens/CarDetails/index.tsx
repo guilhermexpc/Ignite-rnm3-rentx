@@ -7,6 +7,7 @@ import { Accessory } from '../../components/Accessory';
 import { Button } from '../../components/Button';
 
 // [SVGs]
+import { getAccessoryIcon } from '../../utils/getAccessoryIcon';
 import SpeedSvg from '../../assets/speed.svg';
 import AccelerationSvg from '../../assets/acceleration.svg';
 import ForceSvg from '../../assets/force.svg';
@@ -81,7 +82,10 @@ export function CarDetails(){
       <Accessories>
         {
           car.accessories.map(item =>             
-            <Accessory name={item.name} icon={SpeedSvg}/>
+            <Accessory 
+              name={item.name} 
+              icon={getAccessoryIcon(item.type)}
+            />
           )
         }
       </Accessories>
