@@ -24,8 +24,8 @@ export function Home(){
 
   const navigation = useNavigation<any>();
 
-  function handleCarDetails(carDetail: CarDTO){
-    navigation.navigate(screens.carDetails, { carDetail });
+  function handleCarDetails(car: CarDTO){
+    navigation.navigate(screens.carDetails, { car });
   }
 
   useEffect (() => {
@@ -42,6 +42,10 @@ export function Home(){
     }
     fetchCars();
   },[])
+
+  useEffect (() => {
+    // console.warn(cars[0]);
+  },[cars])
 
   return (
     <Container>     

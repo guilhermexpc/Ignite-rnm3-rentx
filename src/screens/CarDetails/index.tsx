@@ -33,6 +33,7 @@ import {
   // OfflineInfo
 } from './styles';
 import { screens } from '../../global/routes';
+import { View, Text } from 'react-native';
 
 interface Params {
   car: CarDTO;
@@ -42,7 +43,7 @@ export function CarDetails(){
   const navigation = useNavigation<any>();
   const route = useRoute();
   const { car } = route.params as Params;
-  console.log(car);
+  // console.log(car);
 
   function handleConfirmRental() {
     navigation.navigate(screens.scheduling);
@@ -60,39 +61,32 @@ export function CarDetails(){
 
       <CarImages>
         <ImageSlider 
-          imagesUrl={['https://e7.pngegg.com/pngimages/796/507/png-clipart-audi-rs-4-audi-a4-allroad-quattro-car-audi-rs-6-audi-compact-car-sedan.png']}
+          imagesUrl={car.photos}
         />
       </CarImages>
 
     <Content>
       <Details>
         <Description>
-          <Brand>Brand</Brand>
-          <Name>Name</Name>
+          <Brand>{car.brand}</Brand>
+          <Name>{car.name}</Name>
         </Description>
         
         <Rent>
-          <Period>Period</Period>
-          <Price>Price</Price>
+          <Period>{car.period}</Period>
+          <Price>{car.price}</Price>
         </Rent>
       </Details>    
-
       
       <Accessories>
-        <Accessory name="380Km/h" icon={SpeedSvg}/>
-        <Accessory name="3.2s" icon={AccelerationSvg}/>
-        <Accessory name="800 HP" icon={ForceSvg}/>
-        <Accessory name="Gasolina" icon={GasolineSvg}/>
-        <Accessory name="Auto" icon={ExchangeSvg}/>
-        <Accessory name="2 Pessoas" icon={PeopleSvg}/>
+        {
+          car.accessories.map(item =>             
+            <Accessory name={item.name} icon={SpeedSvg}/>
+          )
+        }
       </Accessories>
 
-      <About>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          libero earum ab quia officia illum pariatur
-          eligendi ut possimus dolorum, perspiciatis magni,
-          ipsam tempora deleniti.
-      </About>
+      <About>{car.about}</About>
     </Content>
 
     <Footer>
