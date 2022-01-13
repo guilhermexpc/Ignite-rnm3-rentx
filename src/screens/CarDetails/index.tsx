@@ -47,7 +47,7 @@ export function CarDetails(){
   // console.log(car);
 
   function handleConfirmRental() {
-    navigation.navigate(screens.scheduling);
+    navigation.navigate(screens.scheduling, { car });
   }
 
   function handleBack(){

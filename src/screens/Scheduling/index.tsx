@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StatusBar } from 'react-native';
+import { Alert, StatusBar } from 'react-native';
 import { useNavigation, useRoute, useTheme } from '@react-navigation/native';
 
 import { BackButton } from '../../components/BackButton';
@@ -44,12 +44,15 @@ export function Scheduling(){
   const { car } = route.params as Params;
 
   function handleConfirmRental() {
-    navigation.navigate(screens.schedulingDetails, {
-      car,
-      dates: Object.keys(markedDates)
-    });
+    if (!rentalPeriod.startFormatted || !rentalPeriod.endFormatted){
+      Alert.alert("Selecione o intervalo para alugar");
+    }else {
+      navigation.navigate(screens.schedulingDetails, {
+        car,
+        dates: Object.keys(markedDates)
+      });  
+    }
   }
-
 
   function handleBack(){
     navigation.goBack();    
@@ -73,7 +76,7 @@ export function Scheduling(){
     const firstDate = Object.keys(interval)[0];
     const endDate = Object.keys(interval)[Object.keys(interval).length - 1];
 
-    setRentalPeriod({          
+    setRentalPeriod({               
       startFormatted: format(getPlatformDate(new Date(firstDate)), 'dd/MM/yyyy'),
       endFormatted: format(getPlatformDate(new Date(endDate)), 'dd/MM/yyyy'),
     })
