@@ -20,7 +20,7 @@ export const Header = styled.View`
 
 export const HeaderContent = styled.View`
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 `;
 
