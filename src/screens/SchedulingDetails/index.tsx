@@ -82,7 +82,7 @@ export function SchedulingDetails(){
   async function handleConfirmRental() {
     setLoading(true);
 
-    await api.post('/rentals', {      
+    await api.post('/schedules_bycars', {      
       user_id: 1,
       car_id: car.id,
       start_date: new Date(),
@@ -90,7 +90,7 @@ export function SchedulingDetails(){
       total: rentTotal
     })
     .then(() => {
-      navigation.navigate('Confirmation', {
+      navigation.navigate('SchedulingComplete', {
         nextScreenRoute: 'Home',
         title: 'Carro alugado!',
         message: `Agora você só precisa ir\naté a concessionária da RENTX\npegar o seu automóvel.`
@@ -98,7 +98,7 @@ export function SchedulingDetails(){
     })
     .catch((erro) => {
       setLoading(false);
-      Alert.alert('Não foi possível confirmar o agendamento.')
+      Alert.alert(`Erro gendmento ${erro}`);
     })
   }
 

@@ -3,7 +3,8 @@ enum screens {
   carDetails = 'CarDetails',
   scheduling = 'Scheduling',
   schedulingDetails = 'SchedulingDetails',
-  schedulingComplete = 'SchedulingComplete'
+  schedulingComplete = 'SchedulingComplete',
+  myCars = 'MyCars'
 }
 
 export { screens }

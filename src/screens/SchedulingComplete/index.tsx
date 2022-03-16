@@ -36,7 +36,7 @@ export function SchedulingComplete(){
       <LogoSvg width={width}/>
       <Content>
         <DoneSvg width={80} height={80}/>
-        <Title>Carro alugador!</Title>
+        <Title>Carro alugado!</Title>
         <Message>
           Agora você só precisa ir {'\n'}
           até uma concessionária da RENTX {'\n'}

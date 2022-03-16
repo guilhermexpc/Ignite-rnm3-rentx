@@ -344,6 +344,38 @@
         "2021-06-28",
         "2021-06-29"
       ]
+    },
+    {
+      "user_id": 1,
+      "car_id": "535e8de8-721b-4bac-8b72-7d29be7da467",
+      "start_date": "2022-03-13T22:40:30.403Z",
+      "end_date": "2022-03-13T22:40:30.403Z",
+      "total": 240,
+      "id": "yhzMmIK"
+    },
+    {
+      "user_id": 1,
+      "car_id": "535e8de8-721b-4bac-8b72-7d29be7da467",
+      "start_date": "2022-03-13T22:41:01.941Z",
+      "end_date": "2022-03-13T22:41:01.941Z",
+      "total": 360,
+      "id": "PqMLc-d"
+    },
+    {
+      "user_id": 1,
+      "car_id": "535e8de8-721b-4bac-8b72-7d29be7da467",
+      "start_date": "2022-03-13T22:46:39.736Z",
+      "end_date": "2022-03-13T22:46:39.736Z",
+      "total": 360,
+      "id": "jsZxHwb"
+    },
+    {
+      "user_id": 1,
+      "car_id": "535e8de8-721b-4bac-8b72-7d29be7da467",
+      "start_date": "2022-03-14T00:07:19.516Z",
+      "end_date": "2022-03-14T00:07:19.516Z",
+      "total": 360,
+      "id": "0B-iel9"
     }
   ],
   "schedules_byuser": [
