@@ -31,6 +31,7 @@ export function ImageSlider({imagesUrl}: Props){
   const [imageIndex, setImageIndex] = useState(0); 
 
   const indexChanged = useRef((info: ChangeImageProps) => {
+    console.log(info)
     const index = info.viewableItems[0].index!;
     setImageIndex(index);
   });
@@ -38,18 +39,33 @@ export function ImageSlider({imagesUrl}: Props){
   return (
     <Container>
       <ImageIndexes>
-        <ImageIndex active={true}/>
-        <ImageIndex active={false}/>
-        <ImageIndex active={false}/>
-        <ImageIndex active={false}/>
+        {imagesUrl.map((_, index) => (
+          <ImageIndex 
+            key={String(index)}
+            active={index === imageIndex}
+          />
+        ))}
       </ImageIndexes>
 
-      <CarImageWrapper>
-        <CarImage
-          source={{ uri: imagesUrl[0]}}
-          resizeMode="contain"
+      
+        <FlatList
+          data={imagesUrl}
+          keyExtractor={key => key}
+          renderItem={({ item }) => (
+            <CarImageWrapper>
+              <CarImage
+              source={{ uri: item}}
+              resizeMode="contain"
+              />  
+            </CarImageWrapper>          
+          )}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          onViewableItemsChanged={indexChanged.current}
         />
-      </CarImageWrapper>
+
+       
+   
 
     </Container>
   );
