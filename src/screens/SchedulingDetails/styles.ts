@@ -125,7 +125,7 @@ export const DateTitle = styled.Text`
 export const DateValue = styled.Text`
   font-family: ${({ theme }) => theme.fonts.primary_500};
   color: ${({ theme }) => theme.colors.title};
-  font-size: ${RFValue(15)}px;
+  font-size: ${RFValue(15)}px;  
 `;
 
 export const RentalPrice = styled.View`
